@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+{% load staticfiles%}
+<html >
+<head>
+
+  <!-- Site made with Mobirise Website Builder v4.8.6, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.8.6, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="{% static 'assets/images/jf-96x96.png' %}" type="image/x-icon">
+  <meta name="description" content="">
+  <title>Home</title>
+
+  <link rel="stylesheet" href="{% static 'assets/web/assets/mobirise-icons/mobirise-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'assets_analysis/tether/tether.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets_analysis/bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets_analysis/bootstrap/css/bootstrap-grid.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets_analysis/bootstrap/css/bootstrap-reboot.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets_analysis/dropdown/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'assets_analysis/socicon/css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'assets_analysis/theme/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'assets_analysis/mobirise/css/mbr-additional.css' %}" type="text/css">
+
+
+  <link rel="stylesheet" href="{%static 'assets/web/assets/mobirise-icons/mobirise-icons.css'%}">
+  <link rel="stylesheet" href="{%static 'assets/tether/tether.min.css' %}">
+  <link rel="stylesheet" href="{%static 'assets/bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{%static 'assets/bootstrap/css/bootstrap-grid.min.css' %}">
+  <link rel="stylesheet" href="{%static 'assets/bootstrap/css/bootstrap-reboot.min.css' %}">
+  <link rel="stylesheet" href="{%static 'assets/dropdown/css/style.css' %}">
+  <link rel="stylesheet" href="{%static 'assets/socicon/css/styles.css' %}">
+  <link rel="stylesheet" href="{%static 'assets/as-pie-progress/css/progress.min.css' %}">
+  <link rel="stylesheet" href="{%static 'assets/theme/css/style.css' %}">
+  <link rel="stylesheet" href="{%static 'assets/mobirise/css/mbr-additional.css' %}" type="text/css">
+
+  <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+  <style media="screen">
+    body{
+      margin-top:30px;
+    }
+  </style>
+  <section class="menu cid-rakr8DWKxw" once="menu" id="menu1-3">
+
+
+
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="{% url 'home' %}">
+                         <img src="{% static 'assets/images/jf-96x96.png' %}" alt="Mobirise" title="" style="height: 3.8rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="{% url 'home'%}">Job Free</a></span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+              {% if user.is_authenticated%}
+                <li class="nav-item"><a class="nav-link link text-white display-7" href="{% url 'user_logout' %}"><span class="mbri-logout mbr-iconfont mbr-iconfont-btn"></span>Logout</a></li>
+                {% if user.get_short_name == "job_seeker" %}
+                  <li class="nav-item"><a class="nav-link link text-white display-7" href="{% url 'job_seeker:usermodel_list' %}"><span class="mbri-edit mbr-iconfont mbr-iconfont-btn"></span>User Details</a></li>
+                  <li class="nav-item"><a class="nav-link link text-white display-7" href="{% url 'job_seeker:job_display'%}"><span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>Dashboard</a></li>
+                {% else %}
+                  <li class="nav-item"><a class="nav-link link text-white display-7" href="{% url 'company:company_dashboard' %}"><span class="mbri-letter mbr-iconfont mbr-iconfont-btn"></span>Post</a></li>
+                  <li class="nav-item"><a class="nav-link link text-white display-7" href="{% url 'company:company_jobs_dashboard'%}"><span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>Dashboard</a>
+                {% endif %}
+              {% else %}
+                  <li class="nav-item"><a class="nav-link link text-white display-7" href="#login-signup"><span class="mbri-login mbr-iconfont mbr-iconfont-btn"></span>Login/Signup</a></li>
+              {% endif %}
+            </ul>
+
+        </div>
+    </nav>
+</section>
+
+
+
+<!-- Body Block -->
+
+
+<section class="engine"><a href="https://mobirise.info/k">develop own website</a></section><section class="progress-bars2 cid-raBAWMdnZS" id="progress-bars2-1" style = "background-color:white;">
+
+    <div class="container">
+        <h2 class="mbr-section-title pb-3 align-center mbr-fonts-style display-2">
+            You Journey so far!</h2>
+
+        <h3 class="mbr-section-subtitle mbr-fonts-style display-5">
+            Have a look at all the number job posts in which you are selected/rejected/reviewed!</h3>
+
+        <div class="row pt-5 mt-5">
+            <div class="col-md-6 text-elements">
+                <h4 class="section-content-title pb-3 align-left mbr-fonts-style display-5">
+                    What does this progress bar represents?</h4>
+                <p class="section-content-text align-left mbr-fonts-style display-7">
+                    These progress bars shows the number of companies in which you are selected/rejected/reviewed. You can have a look at the number of offeres, offered by different companies in your dashbord-&gt;all Jobs section.</p>
+            </div>
+            <div class="progress_elements col-md-6">
+                <div class="progress1 pb-5">
+                    <div class="title-wrap">
+                        <div class="progressbar-title mbr-fonts-style display-7">
+                            <p>
+                                Selected</p>
+                        </div>
+                        <div class="progress_value mbr-fonts-style display-7">
+                              {{ selected }}
+                            <span></span>
+                        </div>
+                    </div>
+                    <progress class="progress progress-primary " max="100" value="{{ selected }}">
+                    </progress>
+                </div>
+
+                <div class="progress2 pb-5">
+                    <div class="title-wrap">
+                        <div class="progressbar-title mbr-fonts-style display-7">
+                            <p>
+                                Rejected</p>
+                        </div>
+                    <div class="progress_value mbr-fonts-style display-7">
+                        {{ rejected }}
+                        <span></span>
+                    </div>
+                    </div>
+                    <progress class="progress progress-primary" max="100" value="{{ rejected }}">
+                    </progress>
+                </div>
+
+                <div class="progress3 pb-5">
+                    <div class="title-wrap">
+                        <div class="progressbar-title mbr-fonts-style display-7">
+                            <p>Reviewed</p>
+                        </div>
+                    <div class="progress_value mbr-fonts-style display-7">
+                        {{ reviewed }}
+                        <span></span>
+                    </div>
+                    </div>
+                    <progress class="progress progress-primary" max="100" value="{{ reviewed }}">
+                    </progress>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="progress-bars1 cid-raBAYN1u4q" id="progress-bars1-2" style = "background-color:white;">
+
+    <div class="container">
+        <h2 class="mbr-section-title pb-2 align-center mbr-fonts-style display-2">
+            Statistical Analysis based on Job Profiles
+        </h2>
+
+        <h3 class="mbr-section-subtitle pb-5 mbr-fonts-style display-5">
+            Have a look at the number of job posted per job profile!
+        </h3>
+        {% for key, value in job_prof.items %}
+        <div class="progress_elements">
+            <div class="progress1 pb-5">
+                <div class="title-wrap">
+                    <div class="progressbar-title mbr-fonts-style display-7">
+                        <p>
+                            {{ key }}
+                        </p>
+                    </div>
+                    <div class="progress_value mbr-fonts-style display-7">
+                        {{ value }}
+                    </div>
+                </div>
+                <progress class="progress progress-primary" max="100" value="{{ value }}">
+                </progress>
+            </div>
+          {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+<section class="cid-raBBeBOFgT" id="social-buttons3-6">
+
+
+
+<!-- End Block -->
+
+<section class="cid-rakvqG7Egd" id="social-buttons3-8">
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="col-md-8 align-center">
+                <h2 class="pb-3 mbr-section-title mbr-fonts-style display-2">
+                    SHARE THIS PAGE!
+                </h2>
+                <div>
+                    <div class="mbr-social-likes">
+                        <span class="btn btn-social socicon-bg-facebook facebook mx-2" title="Share link on Facebook">
+                            <i class="socicon socicon-facebook"></i>
+                        </span>
+                        <span class="btn btn-social twitter socicon-bg-twitter mx-2" title="Share link on Twitter">
+                            <i class="socicon socicon-twitter"></i>
+                        </span>
+                        <span class="btn btn-social plusone socicon-bg-googleplus mx-2" title="Share link on Google+">
+                            <i class="socicon socicon-googleplus"></i>
+                        </span>
+
+
+                        <span class="btn btn-social pinterest socicon-bg-pinterest mx-2" title="Share link on Pinterest">
+                            <i class="socicon socicon-pinterest"></i>
+                        </span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section once="" class="cid-rakvx6YUQs" id="footer6-a">
+
+    <div class="container">
+        <div class="media-container-row align-center mbr-white">
+            <div class="col-12">
+                <p class="mbr-text mb-0 mbr-fonts-style display-7">
+                    © Copyright 2018 Job Free - All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <script src="{%static 'assets/web/assets/jquery/jquery.min.js'%}"></script>
+  <script src="{%static 'assets/popper/popper.min.js'%}"></script>
+  <script src="{%static 'assets/tether/tether.min.js'%}"></script>
+  <script src="{%static 'assets/bootstrap/js/bootstrap.min.js'%}"></script>
+  <script src="{%static 'assets/smoothscroll/smooth-scroll.js'%}"></script>
+  <script src="{%static 'assets/dropdown/js/script.min.js'%}"></script>
+  <script src="{%static 'assets/touchswipe/jquery.touch-swipe.min.js'%}"></script>
+  <script src="{%static 'assets/ytplayer/jquery.mb.ytplayer.min.js'%}"></script>
+  <script src="{%static 'assets/vimeoplayer/jquery.mb.vimeo_player.js'%}"></script>
+  <script src="{%static 'assets/bootstrapcarouselswipe/bootstrap-carousel-swipe.js'%}"></script>
+  <script src="{%static 'assets/mbr-flip-card/mbr-flip-card.js'%}"></script>
+  <script src="{%static 'assets/parallax/jarallax.min.js'%}"></script>
+  <script src="{%static 'assets/as-pie-progress/jquery-as-pie-progress.min.js'%}"></script>
+  <script src="{%static 'assets/sociallikes/social-likes.js'%}"></script>
+  <script src="{%static 'assets/theme/js/script.js'%}"></script>
+  <script src="{%static 'assets/slidervideo/script.js'%}"></script>
+  <script src="{%static 'assets/formoid/formoid.min.js'%}"></script>
+
+  <script src="{% static 'assets_analysis/web/assets/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'assets_analysis/popper/popper.min.js' %}"></script>
+  <script src="{% static 'assets_analysis/tether/tether.min.js' %}"></script>
+  <script src="{% static 'assets_analysis/bootstrap/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'assets_analysis/dropdown/js/script.min.js' %}"></script>
+  <script src="{% static 'assets_analysis/touchswipe/jquery.touch-swipe.min.js' %}"></script>
+  <script src="{% static 'assets_analysis/sociallikes/social-likes.js' %}"></script>
+  <script src="{% static 'assets_analysis/smoothscroll/smooth-scroll.js' %}"></script>
+  <script src="{% static 'assets_analysis/theme/js/script.js' %}"></script>
+
+
+</body>
+</html>

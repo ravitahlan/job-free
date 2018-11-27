@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <!-- Site made with Mobirise Website Builder v4.8.6, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.8.6, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="static/assets/images/jf-96x96.png" type="image/x-icon">
+  <meta name="description" content="">
+  <title>Home</title>
+  <link rel="stylesheet" href="static/assets/web/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="stylesheet" href="static/assets/tether/tether.min.css">
+  <link rel="stylesheet" href="static/assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="static/assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="static/assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="static/assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="static/assets/as-pie-progress/css/progress.min.css">
+  <link rel="stylesheet" href="static/assets/theme/css/style.css">
+  <link rel="stylesheet" href="static/assets/mobirise/css/mbr-additional.css" type="text/css">
+
+
+  <!-- Login CSS -->
+  <link rel="stylesheet" href="static/assets/mobirise/css/style_grid.css">
+	<link rel="stylesheet" href="static/assets/mobirise/css/panel.css">
+
+
+
+
+</head>
+<body>
+  <section class="menu cid-rakr8DWKxw" once="menu" id="menu1-3">
+
+
+
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="{% url 'home' %}">
+                         <img src="static/assets/images/jf-96x96.png" alt="Mobirise" title="" style="height: 3.8rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="{% url 'home'%}">Job Free</a></span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+              {% if user.is_authenticated%}
+                <li class="nav-item"><a class="nav-link link text-white display-7" href="{% url 'user_logout' %}"><span class="mbri-logout mbr-iconfont mbr-iconfont-btn"></span>Logout</a></li>
+                {% if user.get_short_name == "job_seeker" %}
+                  <li class="nav-item"><a class="nav-link link text-white display-7" href="{% url 'job_seeker:usermodel_list' %}"><span class="mbri-edit mbr-iconfont mbr-iconfont-btn"></span>User Details</a></li>
+                  <li class="nav-item"><a class="nav-link link text-white display-7" href="{% url 'job_seeker:job_display'%}"><span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>Dashboard</a></li>
+                {% else %}
+                  <li class="nav-item"><a class="nav-link link text-white display-7" href="{% url 'company:company_dashboard' %}"><span class="mbri-letter mbr-iconfont mbr-iconfont-btn"></span>Post</a></li>
+                  <li class="nav-item"><a class="nav-link link text-white display-7" href="{% url 'company:company_jobs_dashboard'%}"><span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>Dashboard</a>
+                {% endif %}
+              {% else %}
+                  <li class="nav-item"><a class="nav-link link text-white display-7" href="#login-signup"><span class="mbri-login mbr-iconfont mbr-iconfont-btn"></span>Login/Signup</a></li>
+              {% endif %}
+            </ul>
+
+        </div>
+    </nav>
+</section>
+
+{% block body_block %}
+
+<section class="engine"><a href="#">site creation software</a></section><section class="carousel slide cid-rakyjsN0BS" data-interval="false" id="slider1-b">
+
+
+
+    <div class="full-screen"><div class="mbr-slider slide carousel" data-pause="true" data-keyboard="false" data-ride="false" data-interval="false"><ol class="carousel-indicators"><li data-app-prevent-settings="" data-target="#slider1-b" data-slide-to="0"></li><li data-app-prevent-settings="" data-target="#slider1-b" class=" active" data-slide-to="1"></li><li data-app-prevent-settings="" data-target="#slider1-b" data-slide-to="2"></li></ol><div class="carousel-inner" role="listbox"><div class="carousel-item slider-fullscreen-image" data-bg-video-slide="false" style="background-image: url(static/assets/images/mbr-1920x1280.jpg);"><div class="container container-slide"><div class="image_wrapper"><div class="mbr-overlay"></div><img src="static/assets/images/mbr-1920x1280.jpg"><div class="carousel-caption justify-content-center"><div class="col-10 align-center"><h2 class="mbr-fonts-style display-1">Practice is the key to success!</h2><p class="lead mbr-text mbr-fonts-style display-5"></p></div></div></div></div></div><div class="carousel-item slider-fullscreen-image active" data-bg-video-slide="false" style="background-image: url(static/assets/images/mbr-1-1920x1280.jpg);"><div class="container container-slide"><div class="image_wrapper"><div class="mbr-overlay"></div><img src="static/assets/images/mbr-1-1920x1280.jpg"><div class="carousel-caption justify-content-center"><div class="col-10 align-center"><h2 class="mbr-fonts-style display-1">Get what you deserve</h2><p class="lead mbr-text mbr-fonts-style display-5"></p></div></div></div></div></div><div class="carousel-item slider-fullscreen-image" data-bg-video-slide="false" style="background-image: url(static/assets/images/23-1920x1280.jpg);"><div class="container container-slide"><div class="image_wrapper"><div class="mbr-overlay"></div><img src="static/assets/images/23-1920x1280.jpg"><div class="carousel-caption justify-content-center"><div class="col-10 align-center"><h2 class="mbr-fonts-style display-1">Work Hard</h2><p class="lead mbr-text mbr-fonts-style display-5"></p></div></div></div></div></div></div><a data-app-prevent-settings="" class="carousel-control carousel-control-prev" role="button" data-slide="prev" href="#slider1-b"><span aria-hidden="true" class="mbri-left mbr-iconfont"></span><span class="sr-only">Previous</span></a><a data-app-prevent-settings="" class="carousel-control carousel-control-next" role="button" data-slide="next" href="#slider1-b"><span aria-hidden="true" class="mbri-right mbr-iconfont"></span><span class="sr-only">Next</span></a></div></div>
+
+</section>
+
+<section class="features15 cid-rakyAXVauF mbr-parallax-background" id="features15-e">
+
+
+
+
+    <div class="container">
+        <h2 class="mbr-section-title pb-3 align-center mbr-fonts-style display-2">
+            What we Offer</h2>
+        <h3 class="mbr-section-subtitle display-5 align-center mbr-fonts-style"></h3>
+
+        <div class="media-container-row container pt-5 mt-2">
+
+            <div class="col-12 col-md-6 mb-4 col-lg-4">
+                <div class="card flip-card p-5 align-center">
+                    <div class="card-front card_cont">
+                        <img src="static/assets/images/jumbotron.png" alt="Mobirise">
+                    </div>
+                    <div class="card_back card_cont">
+                        <h4 class="card-title display-5 py-2 mbr-fonts-style">Resume Builder</h4>
+                        <p class="mbr-text mbr-fonts-style display-7">Build your Resume with our exciting templates</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 mb-4 col-lg-4">
+
+                <div class="card flip-card p-5 align-center">
+                    <div class="card-front card_cont">
+                        <img src="static/assets/images/jumbotron2.png" alt="Mobirise">
+                    </div>
+                    <div class="card_back card_cont">
+                        <a href = "{% url 'editor:typingEditor'%}" style="color:white;"><h4 class="card-title py-2 mbr-fonts-style display-5"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Typing Test &nbsp; &nbsp; &nbsp; &nbsp;</p></h4>
+                        <p class="mbr-text mbr-fonts-style display-7">Check out our Typing Speed Tester and boast your resume by upgrading your typing skill.<br>
+                        </p></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 mb-4 col-lg-4">
+                <div class="card flip-card p-5 align-center">
+                    <div class="card-front card_cont">
+                        <img src="static/assets/images/background5.jpg" alt="Mobirise">
+                    </div>
+                    <div class="card_back card_cont">
+                        <h4 class="card-title py-2 mbr-fonts-style display-5">Job Portal</h4>
+                        <p class="mbr-text mbr-fonts-style display-7">Find the Job Profile according to your skills</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+</div></section>
+
+<!-- Login and Sign Up Panel -->
+{% if not user.is_authenticated %}
+<div class="panels" id = "login-signup">
+<div class="panels__container">
+  <div class="panel">
+    <div class="panel__content" style="background-image: url(static/assets/images/user_board1.png);">
+    <h3 class="panel__title">COMPANY</h3>
+   <center><a href="{% url 'company_signup' %}" class="button" style="color:white;" id="linkButton"><span> <b>Signup</b></span></a>
+   <a href="{% url 'company_login'%}" class="button" style="color:white;" id="linkButton"><span> <b>Login </b> </span> </a></center>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="panel__content" style="background-image: url(static/assets/images/user_board3.jpg)">
+    <h3 class="panel__title">JOB SEEKER</h3>
+     <center><a href="{% url 'user_signup' %}" class="button" style="color:white;" id="linkButton"><span> <b>Signup</b> </span></a>
+     <a href="{% url "user_login"%}" class="button" style="color:white;" id="linkButton"><span> <b>Login</b> </span> </a></center>
+    </div>
+  </div>
+</div>
+</div>
+{% endif %}
+<!-- End of Login and Signup Panel -->
+
+<section class="mbr-section form4 cid-rakyqSH3Tz mbr-parallax-background" id="form4-c">
+
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="google-map"><iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0Dx_boXQiwvdz8sJHoYeZNVTdoWONYkU&amp;q=place_id:ChIJjbgiTVlaGjkR7JIJjcU0yUw" allowfullscreen=""></iframe></div>
+            </div>
+            <div class="col-md-6">
+                <h2 class="pb-3 align-left mbr-fonts-style display-2">
+                    Drop a Line
+                </h2>
+                <div>
+                    <div class="icon-block pb-3">
+                        <span class="icon-block__icon">
+                            <span class="mbri-letter mbr-iconfont"></span>
+                        </span>
+                        <h4 class="icon-block__title align-left mbr-fonts-style display-5">
+                            Don't hesitate to contact us
+                        </h4>
+                    </div>
+                    <div class="icon-contacts pb-3">
+                        <h5 class="align-left mbr-fonts-style display-7">
+                            Ready for offers and cooperation
+                        </h5>
+                        <p class="mbr-text align-left mbr-fonts-style display-7">
+                            Phone: +91 &nbsp;8384058419&nbsp;<br>
+                            Email: ravikumartahlan@gmail.com</p>
+                    </div>
+                </div>
+                <div data-form-type="formoid">
+                    <div data-form-alert="" hidden="">
+                        Thanks for filling out the form!
+                    </div>
+                    <form class="block mbr-form" action="https://mobirise.com/" method="post" data-form-title="Mobirise Form"><input type="hidden" name="email" data-form-email="true" value="yt7bOBPJrOx5XTNB3YYz2lV/nBR3qVWHHWTuOrPptl2uT+sZoT5dsCBj0PlsG6o7wor+nGm9c448B8EKUH+FsSE8dGNIdM0uxdioGIaPpCs8g2FuJOUgfZV6L2rLMOK/">
+                        <div class="row">
+                            <div class="col-md-6 multi-horizontal" data-for="name">
+                                <input type="text" class="form-control input" name="name" data-form-field="Name" placeholder="Your Name" required="" id="name-form4-c">
+                            </div>
+                            <div class="col-md-6 multi-horizontal" data-for="phone">
+                                <input type="text" class="form-control input" name="phone" data-form-field="Phone" placeholder="Phone" required="" id="phone-form4-c">
+                            </div>
+                            <div class="col-md-12" data-for="email">
+                                <input type="text" class="form-control input" name="email" data-form-field="Email" placeholder="Email" required="" id="email-form4-c">
+                            </div>
+                            <div class="col-md-12" data-for="message">
+                                <textarea class="form-control input" name="message" rows="3" data-form-field="Message" placeholder="Message" style="resize:none" id="message-form4-c"></textarea>
+                            </div>
+                            <div class="input-group-btn col-md-12" style="margin-top: 10px;"><button href="" type="submit" class="btn btn-primary btn-form display-4"><span class="mbri-paper-plane mbr-iconfont mbr-iconfont-btn"></span>SEND MESSAGE</button></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="progress-bars3 cid-rakXpbmDSQ" id="progress-bars3-f">
+
+
+
+
+
+    <div class="container">
+        <h2 class="mbr-section-title pb-3 align-center mbr-fonts-style display-2">
+            What we are up to</h2>
+
+        <h3 class="mbr-section-subtitle mbr-fonts-style display-5">
+            We are having a number of companies/organizations registered on our website. They are in search of true talent. So join today! Our Goal is 100 companies , 100 candidates and 100 Job Posts for now! <b>GOAL ACHIEVED SO FAR!</b></h3>
+
+        <div class="media-container-row pt-5 mt-2">
+            <div class="card p-3 align-center">
+                <div class="wrap">
+                    <div class="pie_progress progress1" role="progressbar" data-goal="{{c_number}}">
+                        <p class="pie_progress__number mbr-fonts-style display-5"></p>
+                    </div>
+                </div>
+                <div class="mbr-crt-title pt-3">
+                    <h4 class="card-title py-2 mbr-fonts-style display-5">
+                        Number of Companies</h4>
+                </div>
+            </div>
+
+            <div class="card p-3 align-center">
+                <div class="wrap">
+                    <div class="pie_progress progress2" role="progressbar" data-goal="{{ u_number }}">
+                        <p class="pie_progress__number mbr-fonts-style display-5"></p>
+                    </div>
+                </div>
+                <div class="mbr-crt-title pt-3">
+                    <h4 class="card-title py-2 mbr-fonts-style display-5">
+                        Number of Applicants</h4>
+                </div>
+            </div>
+
+            <div class="card p-3 align-center">
+                <div class="wrap">
+                    <div class="pie_progress progress3" role="progressbar" data-goal="{{ j_number }}">
+                        <p class="pie_progress__number mbr-fonts-style display-5"></p>
+                    </div>
+                </div>
+                <div class="mbr-crt-title pt-3">
+                    <h4 class="card-title py-2 mbr-fonts-style display-5">
+                        Number of Jobs Posted</h4>
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+</div></section>
+
+
+{% endblock %}
+
+<!-- About Us -->
+<section class="testimonials1 cid-rauQvC3qWW" id="testimonials1-4">
+
+
+
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 align-center">
+                <h2 class="pb-3 mbr-fonts-style display-2" style="margin-top:70px">
+                    About Us</h2>
+                <h3 class="mbr-section-subtitle mbr-light pb-3 mbr-fonts-style display-5">We are a team of three engineers trying to make a change in the way a job portal works
+<div>by providing all our services free of cost, trying our best to make your experience better.</div></h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="container pt-3 mt-2">
+        <div class="media-container-row">
+            <div class="mbr-testimonial p-3 align-center col-12 col-md-6 col-lg-4" style="margin-bottom:70px;">
+                <div class="panel-item p-3">
+                    <div class="card-block">
+                        <div class="testimonial-photo">
+                            <img src="static/assets/images/ravi-240x240.png"  height="200px" width="200" style="border-radius:50%;" alt="" title="">
+                        </div>
+                        <p class="mbr-text mbr-fonts-style display-7"></p>
+                    </div>
+                    <div class="">
+                        <div class="mbr-author-name mbr-bold mbr-fonts-style display-7">
+                             Ravi Kumar Tahlan</div>
+                        <small class="mbr-author-desc mbr-italic mbr-light mbr-fonts-style display-7"></small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mbr-testimonial p-3 align-center col-12 col-md-6 col-lg-4">
+                <div class="panel-item p-3">
+                    <div class="card-block">
+                        <div class="testimonial-photo">
+                            <img src="static/assets/images/kanchee-240x240.png"  height="200px" width="200" style="border-radius:50%;" alt="" title="">
+                        </div>
+                        <p class="mbr-text mbr-fonts-style display-7"></p>
+                    </div>
+                    <div class="">
+                        <div class="mbr-author-name mbr-bold mbr-fonts-style display-7">
+                             Kanchee Srivastava</div>
+                        <small class="mbr-author-desc mbr-italic mbr-light mbr-fonts-style display-7"></small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mbr-testimonial p-3 align-center col-12 col-md-6 col-lg-4">
+                <div class="panel-item p-3">
+                    <div class="card-block">
+                        <div class="testimonial-photo">
+                            <img src="static/assets/images/saurabh-240x320.png"  style="border-radius:50%;" height="200px" width="200" alt="" title="">
+                        </div>
+                        <p class="mbr-text mbr-fonts-style display-7"></p>
+                    </div>
+                    <div class="">
+                        <div class="mbr-author-name mbr-bold mbr-fonts-style display-7">
+                             Saurabh Srivastava</div>
+                        <small class="mbr-author-desc mbr-italic mbr-light mbr-fonts-style display-7"></small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="cid-rakvqG7Egd" id="social-buttons3-8">
+
+
+
+
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="col-md-8 align-center">
+                <h2 class="pb-3 mbr-section-title mbr-fonts-style display-2">
+                    SHARE THIS PAGE!
+                </h2>
+                <div>
+                    <div class="mbr-social-likes">
+                        <span class="btn btn-social socicon-bg-facebook facebook mx-2" title="Share link on Facebook">
+                            <i class="socicon socicon-facebook"></i>
+                        </span>
+                        <span class="btn btn-social twitter socicon-bg-twitter mx-2" title="Share link on Twitter">
+                            <i class="socicon socicon-twitter"></i>
+                        </span>
+                        <span class="btn btn-social plusone socicon-bg-googleplus mx-2" title="Share link on Google+">
+                            <i class="socicon socicon-googleplus"></i>
+                        </span>
+
+
+                        <span class="btn btn-social pinterest socicon-bg-pinterest mx-2" title="Share link on Pinterest">
+                            <i class="socicon socicon-pinterest"></i>
+                        </span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section once="" class="cid-rakvx6YUQs" id="footer6-a">
+
+
+
+
+
+    <div class="container">
+        <div class="media-container-row align-center mbr-white">
+            <div class="col-12">
+                <p class="mbr-text mb-0 mbr-fonts-style display-7">
+                    © Copyright 2018 Job Free - All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <script src="static/assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="static/assets/popper/popper.min.js"></script>
+  <script src="static/assets/tether/tether.min.js"></script>
+  <script src="static/assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="static/assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="static/assets/dropdown/js/script.min.js"></script>
+  <script src="static/assets/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script src="static/assets/ytplayer/jquery.mb.ytplayer.min.js"></script>
+  <script src="static/assets/vimeoplayer/jquery.mb.vimeo_player.js"></script>
+  <script src="static/assets/bootstrapcarouselswipe/bootstrap-carousel-swipe.js"></script>
+  <script src="static/assets/mbr-flip-card/mbr-flip-card.js"></script>
+  <script src="static/assets/parallax/jarallax.min.js"></script>
+  <script src="static/assets/as-pie-progress/jquery-as-pie-progress.min.js"></script>
+  <script src="static/assets/sociallikes/social-likes.js"></script>
+  <script src="static/assets/theme/js/script.js"></script>
+  <script src="static/assets/slidervideo/script.js"></script>
+  <script src="static/assets/formoid/formoid.min.js"></script>
+
+
+</body>
+</html>

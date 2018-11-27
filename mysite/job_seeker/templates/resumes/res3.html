@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.2.621/styles/kendo.common-material.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.2.621/styles/kendo.material.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.2.621/styles/kendo.material.mobile.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+
+    <script src="https://kendo.cdn.telerik.com/2017.2.621/js/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2017.2.621/js/jszip.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2017.2.621/js/kendo.all.min.js"></script>
+	<style type="text/css">
+		* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  /*background: #eee;*/
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  color: #222;
+  font-size: 14px;
+  line-height: 26px;
+  padding-bottom: 50px;
+}
+
+.contain {
+  max-width: 700px;
+  background: #fff;
+  margin: 0px auto 0px;
+  box-shadow: 1px 1px 2px #DAD7D7;
+  border-radius: 3px;
+  padding: 40px;
+  margin-top: 50px;
+}
+
+.title{
+letter-spacing: 2px;
+
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-size: 24px;
+}
+.underline{
+border-bottom: 1px dotted ;
+width: 100%;
+display: block;
+}
+ul{
+	list-style: none;
+}
+ul li{
+	display: inline-block;
+	padding:5px;
+}
+
+	</style>
+	<title></title>
+</head>
+<body>
+<div style="float: right;">
+      <button onclick="ExportPdf()" class="btn btn-primary btn-lg" >Download Resume</button>
+    </div>
+    <br>
+
+<div class="contain" id="resume">
+	<center><h1 style="font-size: 50px;color: #1919FF;"><b>{{ user_data.full_name }}</b></h1>
+
+	<p>{{ user_data.user_email }} | {{ user_data.mobile_number}}</p></center>
+	<br><br>
+
+	<center><p class="title underline" style="background-color: grey;">Profile</p></center>
+	<p>{{ user_data.resume_headline }}</p>
+
+	<br>
+	<center><p class="title underline" style="background-color: grey;">Education</p></center>
+	<p><b>{{ user_data.tenth_institution }}</b></p>
+	<p style="color: #3232FF;"> <span>{{ user_data.tenth_board }}</span> , <span>{{ user_data.tenth_result }}</span>  , <span>{{ user_data.tenth_date }}</span></p>
+	<br>
+	<p><b>{{ user_data.twelfth_institution }}</b></p>
+	<p style="color: #3232FF;">{{ user_data.twelfth_board }}, {{ user_data.twelfth_result }}, {{ user_data.twelfth_date }}</p>
+
+	<br>
+
+	<center><p class="title underline" style="background-color: grey;">Skills</p></center>
+	<ul>
+		{% for skill in skill_list %}
+			<li>{{ skill.skill_name }}</li>
+		{% endfor %}
+	</ul>
+	<br>
+
+	<center><p class="title underline" style="background-color: grey;">Projects</p></center>
+	{% for project in project_list %}
+	<p><b>{{ project.project_name }}</b></p>
+	<p>{{ project.project_description }}</p>
+	<br>
+	{% endfor %}
+
+	<center><p class="title underline" style="background-color: grey;">Certifications</p></center>
+	{% for certificate in certification_list%}
+	<p><b>{{ certificate.certification_name }}</b></p>
+	<p>{{ certificate.certification_organization }}</p>
+	<p>{{ certificate.certificate_link }}</p>
+	<br>
+	{% endfor %}
+
+	<center><p class="title underline" style="background-color: grey;">Awards & Recognitions</p></center>
+	{% for award in award_list %}
+	<p><b>{{ award.award_name }}</b></p>
+	<p>{{ award.award_organization }}</p>
+	<p>{{ award.award_description}}</p>
+	<br>
+	{% endfor %}
+
+<center><p class="title underline" style="background-color: grey;">Interests</p></center>
+	{{ user_data.hobies}}
+</div>
+
+</body>
+</html>
+
+<script src="../content/shared/js/pako.min.js"></script>
+
+    <script>
+     function ExportPdf(){
+kendo.drawing
+    .drawDOM("#resume",
+    {
+        forcePageBreak: ".page-break",
+        paperSize: "A4",
+        margin: { top: "1cm", bottom: "1cm" },
+        scale: 0.7,
+        height: 500,
+        template: $("#page-template").html(),
+        keepTogether: ".prevent-split"
+    })
+        .then(function(group){
+        kendo.drawing.pdf.saveAs(group, "resume.pdf")
+    });
+}
+    </script>

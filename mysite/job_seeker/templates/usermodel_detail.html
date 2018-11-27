@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+{% load staticfiles%}
+<html >
+<head>
+
+  <!-- Site made with Mobirise Website Builder v4.8.6, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.8.6, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="{% static 'assets/images/jf-96x96.png' %}" type="image/x-icon">
+  <meta name="description" content="">
+  <title>Home</title>
+  <link rel="stylesheet" href="{%static 'assets/web/assets/mobirise-icons/mobirise-icons.css'%}">
+  <link rel="stylesheet" href="{%static 'assets/tether/tether.min.css' %}">
+  <link rel="stylesheet" href="{%static 'assets/bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{%static 'assets/bootstrap/css/bootstrap-grid.min.css' %}">
+  <link rel="stylesheet" href="{%static 'assets/bootstrap/css/bootstrap-reboot.min.css' %}">
+  <link rel="stylesheet" href="{%static 'assets/dropdown/css/style.css' %}">
+  <link rel="stylesheet" href="{%static 'assets/socicon/css/styles.css' %}">
+  <link rel="stylesheet" href="{%static 'assets/as-pie-progress/css/progress.min.css' %}">
+  <link rel="stylesheet" href="{%static 'assets/theme/css/style.css' %}">
+  <link rel="stylesheet" href="{%static 'assets/mobirise/css/mbr-additional.css' %}" type="text/css">
+
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> -->
+  <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Login CSS -->
+  <link rel="stylesheet" href="{%static 'assets/mobirise/css/style_grid.css' %}">
+	<link rel="stylesheet" href="{%static 'assets/mobirise/css/panel.css' %}">
+
+
+</head>
+<body>
+  <style media="screen">
+    body{
+      margin-top:100px;
+    }
+  </style>
+
+  <style type="text/css">
+
+            .section{
+                font: normal 20px 'Bitter', serif;
+                color: #2A88AD;
+                margin-bottom: 5px;
+            }
+            h3{
+                background: #2A88AD;
+                padding: 20px 30px 15px 30px;
+                margin: -30px -30px 30px -30px;
+                border-radius: 10px 10px 0 0;
+                color: #fff;
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+                font: normal 30px 'Bitter', serif;
+                box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+                border: 1px solid #257C9E;
+            }
+            .contain{
+                padding:30px;
+                margin:40px auto;
+                background: #FFF;
+                border-radius: 10px;
+                -webkit-border-radius:10px;
+                -moz-border-radius: 10px;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+                -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+                -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+            }
+            li{
+                display: inline;
+            }
+        </style>
+
+  <section class="menu cid-rakr8DWKxw" once="menu" id="menu1-3">
+
+
+
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="{% url 'home' %}">
+                         <img src="{% static 'assets/images/jf-96x96.png' %}" alt="Mobirise" title="" style="height: 3.8rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="{% url 'home'%}">Job Free</a></span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+              {% if user.is_authenticated%}
+                <li class="nav-item"><a class="nav-link link text-white display-7" href="{% url 'user_logout' %}"><span class="mbri-logout mbr-iconfont mbr-iconfont-btn"></span>Logout</a></li>
+                {% if user.get_short_name == "job_seeker" %}
+                  <li class="nav-item"><a class="nav-link link text-white display-7" href="{% url 'job_seeker:usermodel_list' %}"><span class="mbri-edit mbr-iconfont mbr-iconfont-btn"></span>User Details</a></li>
+                  <li class="nav-item"><a class="nav-link link text-white display-7" href="{% url 'job_seeker:job_display'%}"><span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>Dashboard</a></li>
+                {% else %}
+                  <li class="nav-item"><a class="nav-link link text-white display-7" href="{% url 'company:company_dashboard' %}"><span class="mbri-letter mbr-iconfont mbr-iconfont-btn"></span>Post</a></li>
+                  <li class="nav-item"><a class="nav-link link text-white display-7" href="{% url 'company:company_jobs_dashboard'%}"><span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>Dashboard</a>
+                {% endif %}
+              {% else %}
+                  <li class="nav-item"><a class="nav-link link text-white display-7" href="#login-signup"><span class="mbri-login mbr-iconfont mbr-iconfont-btn"></span>Login/Signup</a></li>
+              {% endif %}
+            </ul>
+
+        </div>
+    </nav>
+</section>
+
+<!-- Body Block -->
+
+
+<div class="container" style="margin:0 auto">
+    <div class="contain">
+        <center><h3>Profile Preview</h3></center>
+            <div class="card bg-light text-dark">
+                <div class="card-body">
+                    <h2 class="card-text"><b>{{ user_detail.full_name }}</b></h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="card-text"><i class="material-icons" style="font-size:16px">location_on</i>{{ user_detail.city }}, India</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="card-text"><i class="material-icons" style="font-size:16px">cake</i>{{ user_detail.date_of_birth }}</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="card-text"><i class="material-icons" style="font-size:16px">email</i>{{ user_detail.user_email }}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="card-text"><i class="material-icons" style="font-size:16px">phone</i>{{ user_detail.mobile_number }}</p>
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card bg-light text-dark">
+                        <div class="card-body">
+                            <h4 class="card-text"><b>Skills</b></h4><br>
+                            <ul>
+                                {% for skill in skills %}
+                                <li class="btn btn-primary btn-sm">{{ skill.skill_name }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card bg-light text-dark">
+                        <div class="card-body">
+                            <h4 class="card-text"><b>Hobbies & Interests</b></h4>
+                            <br>
+                            <ul>
+                              {% for hobie in hobies_list%}
+                                <li class="btn btn-primary btn-sm">{{ hobie }}</li>
+                              {% endfor %}
+                            </ul>
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="card bg-light text-dark">
+                <div class="card-body">
+                    <h4 class="card-text"><b>Educational Details</b></h4>
+                    <p class="card-text"><b>10<sup>th</sup> Details</b></p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="card-text"><span><b>Institute: </b></span>{{ user_detail.tenth_institution }}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="card-text"><span><b>Board: </b></span>{{ user_detail.tenth_board }}</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="card-text"><span><b>Result: </b></span>{{ user_detail.tenth_result }}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="card-text"><span><b>Completion Date: </b></span>{{ user_detail.tenth_date }}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <p class="card-text"><b>12<sup>th</sup> Details</b></p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="card-text"><span><b>Institute: </b></span>{{ user_detail.twelfth_institution }}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="card-text"><span><b>Board: </b></span>{{ user_detail.twelfth_board }}</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="card-text"><span><b>Result: </b></span>{{ user_detail.twelfth_result }}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="card-text"><span><b>Completion Date: </b></span>{{ user_detail.twelfth_date }}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <p class="card-text"><b>Diploma Details</b></p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="card-text"><span><b>Institute: </b></span>{{ user_detail.diploma_institution }}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="card-text"><span><b>Stream: </b></span>{{ user_detail.diploma_board }}</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="card-text"><span><b>Result: </b></span>{{ user_detail.diploma_result }}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="card-text"><span><b>Completion Date: </b></span>{{ user_detail.diploma_date }}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <p class="card-text"><b>Bachelor Details</b></p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="card-text"><span><b>College: </b></span>{{ user_detail.bachelor_institution }}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="card-text"><span><b>University: </b></span>{{ user_detail.bachelor_board }}</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="card-text"><span><b>Program: </b></span>B.Tech</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="card-text"><span><b>Stream: </b></span>CSE</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="card-text"><span><b>Result: </b></span>{{ user_detail.bachelor_result }}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="card-text"><span><b>Completion Date: </b></span>{{ user_detail.bachelor_date }}</p>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <br>
+            <div class="card bg-light text-dark">
+                <div class="card-body">
+                    <h4 class="card-text"><b>Resume Details</b></h4>
+                    <p class="card-text"><b>Resume Headline</b></p>
+                    <p class="card-text">{{ user_detail.resume_headline }}</p>
+                    <br>
+                    <p class="card-text"><b>Extra-Curricular</b></p>
+                     <ul>
+                       {% for activity in extra_list %}
+                        <li class="btn btn-primary btn-sm" style="margin-top:3px;">{{activity}}</li>
+                       {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <br>
+            <div class="card bg-light text-dark">
+                <div class="card-body">
+                    <h4 class="card-text"><b>Projects Details</b></h4>
+                    {% for project in project_list %}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="card-text"><span><b>Project Name: </b></span>{{ project.project_name }}</p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="card-text"><span><b>Project Description: </b></span>{{ project.project_description }}</p>
+                        </div>
+                    </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="card-text"><span><b>Start Date: </b></span>{{ project.start_date }}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="card-text"><span><b>Completion Date: </b></span>{{ project.end_date }}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        {% endfor %}
+                    </div>
+            </div>
+            <br>
+            <div class="card bg-light text-dark">
+                <div class="card-body">
+                    <h4 class="card-text"><b>Certifications Details</b></h4>
+                        {% for certificate in certification_list %}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="card-text"><span><b>Certificate Name: </b></span>{{ certificate.certification_name }}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="card-text"><span><b>Certification Organization: </b></span>{{ certifiate.certification_organization }}</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="card-text"><span><b>Valid From: </b></span>{{ certificate.valid_from }}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="card-text"><span><b>Valid Till: </b></span>{{ certificate.valid_till }}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        {% endfor %}
+                    </div>
+            </div>
+            <br>
+            <div class="card bg-light text-dark">
+                <div class="card-body">
+                    <h4 class="card-text"><b>Awards & Recognitions Details</b></h4>
+                        {% for award in award_list %}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="card-text"><span><b>Award Name: </b></span>{{ award.award_name }}</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="card-text"><span><b>Sponsor Organization: </b></span>{{ award.award_organization }}</p>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="card-text"><span><b>Award Description: </b></span>{{ award.award_description }}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        {% endfor %}
+                </div>
+            </div>
+            {% if user.get_short_name == "job_seeker" %}
+              <a class="btn btn-success" href="{% url 'job_seeker:update_profile_form' pk=user_detail.pk %}">Update</a>
+            {%else%}
+            {% endif %}
+
+    </div>
+
+</div>
+
+<!-- <a href="#" class="btn btn-danger">Update</a> -->
+<!-- User Detail Division End -->
+
+<!-- End Block -->
+
+<section class="cid-rakvqG7Egd" id="social-buttons3-8">
+
+
+
+
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="col-md-8 align-center">
+                <h2 class="pb-3 mbr-section-title mbr-fonts-style display-2">
+                    SHARE THIS PAGE!
+                </h2>
+                <div>
+                    <div class="mbr-social-likes">
+                        <span class="btn btn-social socicon-bg-facebook facebook mx-2" title="Share link on Facebook">
+                            <i class="socicon socicon-facebook"></i>
+                        </span>
+                        <span class="btn btn-social twitter socicon-bg-twitter mx-2" title="Share link on Twitter">
+                            <i class="socicon socicon-twitter"></i>
+                        </span>
+                        <span class="btn btn-social plusone socicon-bg-googleplus mx-2" title="Share link on Google+">
+                            <i class="socicon socicon-googleplus"></i>
+                        </span>
+
+
+                        <span class="btn btn-social pinterest socicon-bg-pinterest mx-2" title="Share link on Pinterest">
+                            <i class="socicon socicon-pinterest"></i>
+                        </span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section once="" class="cid-rakvx6YUQs" id="footer6-a">
+
+
+
+
+
+    <div class="container">
+        <div class="media-container-row align-center mbr-white">
+            <div class="col-12">
+                <p class="mbr-text mb-0 mbr-fonts-style display-7">
+                    © Copyright 2018 Job Free - All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <script src="{%static 'assets/web/assets/jquery/jquery.min.js'%}"></script>
+  <script src="{%static 'assets/popper/popper.min.js'%}"></script>
+  <script src="{%static 'assets/tether/tether.min.js'%}"></script>
+  <script src="{%static 'assets/bootstrap/js/bootstrap.min.js'%}"></script>
+  <script src="{%static 'assets/smoothscroll/smooth-scroll.js'%}"></script>
+  <script src="{%static 'assets/dropdown/js/script.min.js'%}"></script>
+  <script src="{%static 'assets/touchswipe/jquery.touch-swipe.min.js'%}"></script>
+  <script src="{%static 'assets/ytplayer/jquery.mb.ytplayer.min.js'%}"></script>
+  <script src="{%static 'assets/vimeoplayer/jquery.mb.vimeo_player.js'%}"></script>
+  <script src="{%static 'assets/bootstrapcarouselswipe/bootstrap-carousel-swipe.js'%}"></script>
+  <script src="{%static 'assets/mbr-flip-card/mbr-flip-card.js'%}"></script>
+  <script src="{%static 'assets/parallax/jarallax.min.js'%}"></script>
+  <script src="{%static 'assets/as-pie-progress/jquery-as-pie-progress.min.js'%}"></script>
+  <script src="{%static 'assets/sociallikes/social-likes.js'%}"></script>
+  <script src="{%static 'assets/theme/js/script.js'%}"></script>
+  <script src="{%static 'assets/slidervideo/script.js'%}"></script>
+  <script src="{%static 'assets/formoid/formoid.min.js'%}"></script>
+
+
+</body>
+</html>

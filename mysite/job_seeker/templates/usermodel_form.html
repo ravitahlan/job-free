@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+{% load staticfiles%}
+<html >
+<head>
+
+  <!-- Site made with Mobirise Website Builder v4.8.6, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.8.6, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="{% static 'assets/images/jf-96x96.png' %}" type="image/x-icon">
+  <meta name="description" content="">
+  <title>Home</title>
+  <link rel="stylesheet" href="{%static 'assets/web/assets/mobirise-icons/mobirise-icons.css'%}">
+  <link rel="stylesheet" href="{%static 'assets/tether/tether.min.css' %}">
+  <link rel="stylesheet" href="{%static 'assets/bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{%static 'assets/bootstrap/css/bootstrap-grid.min.css' %}">
+  <link rel="stylesheet" href="{%static 'assets/bootstrap/css/bootstrap-reboot.min.css' %}">
+  <link rel="stylesheet" href="{%static 'assets/dropdown/css/style.css' %}">
+  <link rel="stylesheet" href="{%static 'assets/socicon/css/styles.css' %}">
+  <link rel="stylesheet" href="{%static 'assets/as-pie-progress/css/progress.min.css' %}">
+  <link rel="stylesheet" href="{%static 'assets/theme/css/style.css' %}">
+  <link rel="stylesheet" href="{%static 'assets/mobirise/css/mbr-additional.css' %}" type="text/css">
+
+  <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+
+  <style type="text/css">
+    .section{
+        font: normal 20px 'Bitter', serif;
+        color: #2A88AD;
+        margin-bottom: 5px;
+    }
+    h3{
+        background: #2A88AD;
+        padding: 20px 30px 15px 30px;
+        margin: -30px -30px 30px -30px;
+        border-radius: 10px 10px 0 0;
+        color: #fff;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+        font: normal 30px 'Bitter', serif;
+        box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+        border: 1px solid #257C9E;
+    }
+    .contain{
+        padding:30px;
+        margin:40px auto;
+        background: #FFF;
+        border-radius: 10px;
+        -webkit-border-radius:10px;
+        -moz-border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+        -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+        -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
+    }
+
+hr{
+    height: 10px;
+    border: 1;
+    box-shadow: inset 0 9px 9px -3px rgba(11, 99, 184, 0.8);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+}
+</style>
+
+
+</head>
+<body>
+  <style media="screen">
+    body{
+      background-color:#acecd8;
+      margin-top:100px;
+    }
+  </style>
+  <section class="menu cid-rakr8DWKxw" once="menu" id="menu1-3">
+
+
+
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="{% url 'home' %}">
+                         <img src="{% static 'assets/images/jf-96x96.png' %}" alt="Mobirise" title="" style="height: 3.8rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="{% url 'home'%}">Job Free</a></span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+              {% if user.is_authenticated%}
+                <li class="nav-item"><a class="nav-link link text-white display-7" href="{% url 'user_logout' %}"><span class="mbri-logout mbr-iconfont mbr-iconfont-btn"></span>Logout</a></li>
+                {% if user.get_short_name == "job_seeker" %}
+                  <li class="nav-item"><a class="nav-link link text-white display-7" href="{% url 'job_seeker:usermodel_list' %}"><span class="mbri-edit mbr-iconfont mbr-iconfont-btn"></span>User Details</a></li>
+                  <li class="nav-item"><a class="nav-link link text-white display-7" href="{% url 'job_seeker:job_display'%}"><span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>Dashboard</a></li>
+                {% else %}
+                  <li class="nav-item"><a class="nav-link link text-white display-7" href="{% url 'company:company_dashboard' %}"><span class="mbri-letter mbr-iconfont mbr-iconfont-btn"></span>Post</a></li>
+                  <li class="nav-item"><a class="nav-link link text-white display-7" href="{% url 'company:company_jobs_dashboard'%}"><span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>Dashboard</a>
+                {% endif %}
+              {% else %}
+                  <li class="nav-item"><a class="nav-link link text-white display-7" href="#login-signup"><span class="mbri-login mbr-iconfont mbr-iconfont-btn"></span>Login/Signup</a></li>
+              {% endif %}
+            </ul>
+
+        </div>
+    </nav>
+</section>
+
+<div class="container">
+
+<!-- Body Block -->
+
+  <form method="POST">
+    {% csrf_token %}
+
+    <div class="contain">
+            <center><h3>Personal Details</h3></center>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="fullName" class="section">Full Name</label>
+                    {{ form.full_name }}
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="email" class="section">User Email</label>
+                    {{ form.user_email }}
+                </div>
+            </div>
+
+            <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="dob" class="section">Date of Birth</label>
+                        {{ form.date_of_birth }}
+                    </div>
+                    <div class="form-group col-md-6">
+                            <label for="contactNumber" class="section">Contact Number</label>
+                            {{ form.mobile_number }}
+                    </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="gender" class="section">Gender</label>
+                    {{ form.gender }}
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="addressLine1" class="section">Address Line 1</label>
+                    {{ form.address_line1 }}
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="addressLine2" class="section">Address Line 2</label>
+                    {{ form.address_line2 }}
+                </div>
+            </div>
+
+            <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="city" class="section">City</label>
+                        {{ form.city }}
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="State" class="section">State</label>
+                        {{ form.state }}
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="Zip" class="section">Zip Code</label>
+                        <!--<input type="text" class="form-control" placeholder="144411">-->
+                        {{ form.zip }}
+                    </div>
+                </div>
+        </div>
+
+        <div class="contain">
+            <center><h3>Educational Details</h3></center>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="tenthInstitution" class="section">10<sup>th</sup> Institution</label>
+                        <!--<input type="text" class="form-control" placeholder="ABC School">-->
+                        {{ form.tenth_institution }}
+                     </div>
+                    <div class="form-group col-md-6">
+                        <label for="tenthBoard" class="section">10<sup>th</sup> Board</label>
+                        <!--<input type="text" class="form-control" placeholder="CBSE">-->
+                        {{ form.tenth_board }}
+                    </div>
+                 </div>
+            <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="tenthResult" class="section">10<sup>th</sup> Result (Percentage/ CGPA)</label>
+                        <!--<input type="text" class="form-control" placeholder="9.00">-->
+                        {{ form.tenth_result }}
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="tenthDate" class="section">10<sup>th</sup> Completion Date</label>
+                        <!--<input type="date" class="form-control">-->
+                        {{ form.tenth_date}}
+                    </div>
+            </div>
+
+            <hr>
+
+            <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="twelthInstitution" class="section">12<sup>th</sup> Institution</label>
+                        <!--<input type="text" class="form-control" placeholder="ABC School">-->
+                        {{ form.twelfth_institution }}
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="twelthBoard" class="section">12<sup>th</sup> Board</label>
+                        <!--<input type="text" class="form-control" placeholder="CBSE">-->
+                        {{ form.twelfth_board }}
+                    </div>
+            </div>
+
+            <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="twelthResult" class="section">12<sup>th</sup> Result (Percentage)</label>
+                        <!--<input type="text" class="form-control" placeholder="94">-->
+                        {{ form.twelfth_result }}
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="twelthDate" class="section">12<sup>th</sup> Completion Date</label>
+                        <!--<input type="date" class="form-control">-->
+                        {{ form.twelfth_date }}
+                    </div>
+            </div>
+
+            <hr>
+
+            <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="diplomaInstitution" class="section">Diploma Institution</label>
+                        <!--<input type="text" class="form-control" placeholder="ABC School">-->
+                        {{ form.diploma_institution }}
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="diplomaStream" class="section">Diploma Stream</label>
+                        <!--<input type="text" class="form-control" placeholder="CBSE">-->
+                        {{ form.diploma_board }}
+                    </div>
+            </div>
+                <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="diplomaResult" class="section">Diploma Result (Percentage)</label>
+                            <!--<input type="text" class="form-control" placeholder="94">-->
+                            {{ form.diploma_result }}
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="diplomaDate" class="section">Diploma Completion Date</label>
+                            <!--<input type="date" class="form-control">-->
+                            {{ form.diploma_date }}
+                        </div>
+                </div>
+
+                <hr>
+
+                <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="bachelorInstitution" class="section">Bachelor Institution/ College</label>
+                            <!--<input type="text" class="form-control" placeholder="ABC College">-->
+                            {{ form.bachelor_institution }}
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="bachelorBoard" class="section">Bachelor Board/ University</label>
+                            <!--<input type="text" class="form-control" placeholder="ABC University">-->
+                            {{ form.bachelor_board}}
+                        </div>
+                </div>
+                    <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="BachelorProgram" class="section">Bachelor Program</label>
+                                <!--<input type="text" class="form-control" placeholder="B.Tech">-->
+                                {{ form.bachelor_program }}
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="BachelorStream" class="section">Bachelor Stream</label>
+                                <!--<input type="text" class="form-control" placeholder="Computer Science and Engineering">-->
+                                {{ form.bachelor_stream }}
+                            </div>
+                    </div>
+
+                    <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="BachelorResult" class="section">Bachelor Result (Percentage)</label>
+                                <!--<input type="text" class="form-control" placeholder="94">-->
+                                {{ form.bachelor_result }}
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="BachelorDate" class="section">Bachelor Completion Date</label>
+                                <!--<input type="date" class="form-control">-->
+                                {{ form.bachelor_date }}
+                            </div>
+                    </div>
+            </div>
+
+            <div class="contain">
+                    <center><h3>Resume Details</h3></center>
+                    <div class="form-group">
+                        <label for="resumeHeadline" class="section">Resume Headline</label>
+                        <!--<textarea class="form-control" placeholder="Write a few lines that highlights your value as a candidate.." rows="7"></textarea>-->
+                        {{ form.resume_headline }}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="extraCurricular" class="section">Extra Curricular</label>
+                        <!-- <textarea class="form-control" rows="7"></textarea>-->
+                        {{ form.extra_curriculam }}
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hobbies" class="section">Hobbies</label>
+                        <!-- <textarea class="form-control" rows="7"></textarea> -->
+                        {{ form.hobies }}
+                        </div>
+
+            </div>
+
+
+    {% if not form.instance.pk %}
+      <input type="submit" class = "btn btn-danger" value="Create">
+      {% else %}
+      <input type="submit" class = "btn btn-warning" value="Update">
+      {% endif %}
+  </form>
+
+<!-- End Block -->
+</div>
+
+<section class="cid-rakvqG7Egd" id="social-buttons3-8">
+
+
+
+
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="col-md-8 align-center">
+                <h2 class="pb-3 mbr-section-title mbr-fonts-style display-2">
+                    SHARE THIS PAGE!
+                </h2>
+                <div>
+                    <div class="mbr-social-likes">
+                        <span class="btn btn-social socicon-bg-facebook facebook mx-2" title="Share link on Facebook">
+                            <i class="socicon socicon-facebook"></i>
+                        </span>
+                        <span class="btn btn-social twitter socicon-bg-twitter mx-2" title="Share link on Twitter">
+                            <i class="socicon socicon-twitter"></i>
+                        </span>
+                        <span class="btn btn-social plusone socicon-bg-googleplus mx-2" title="Share link on Google+">
+                            <i class="socicon socicon-googleplus"></i>
+                        </span>
+
+
+                        <span class="btn btn-social pinterest socicon-bg-pinterest mx-2" title="Share link on Pinterest">
+                            <i class="socicon socicon-pinterest"></i>
+                        </span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section once="" class="cid-rakvx6YUQs" id="footer6-a">
+
+
+
+
+
+    <div class="container">
+        <div class="media-container-row align-center mbr-white">
+            <div class="col-12">
+                <p class="mbr-text mb-0 mbr-fonts-style display-7">
+                    © Copyright 2018 Job Free - All Rights Reserved
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <script src="{%static 'assets/web/assets/jquery/jquery.min.js'%}"></script>
+  <script src="{%static 'assets/popper/popper.min.js'%}"></script>
+  <script src="{%static 'assets/tether/tether.min.js'%}"></script>
+  <script src="{%static 'assets/bootstrap/js/bootstrap.min.js'%}"></script>
+  <script src="{%static 'assets/smoothscroll/smooth-scroll.js'%}"></script>
+  <script src="{%static 'assets/dropdown/js/script.min.js'%}"></script>
+  <script src="{%static 'assets/touchswipe/jquery.touch-swipe.min.js'%}"></script>
+  <script src="{%static 'assets/ytplayer/jquery.mb.ytplayer.min.js'%}"></script>
+  <script src="{%static 'assets/vimeoplayer/jquery.mb.vimeo_player.js'%}"></script>
+  <script src="{%static 'assets/bootstrapcarouselswipe/bootstrap-carousel-swipe.js'%}"></script>
+  <script src="{%static 'assets/mbr-flip-card/mbr-flip-card.js'%}"></script>
+  <script src="{%static 'assets/parallax/jarallax.min.js'%}"></script>
+  <script src="{%static 'assets/as-pie-progress/jquery-as-pie-progress.min.js'%}"></script>
+  <script src="{%static 'assets/sociallikes/social-likes.js'%}"></script>
+  <script src="{%static 'assets/theme/js/script.js'%}"></script>
+  <script src="{%static 'assets/slidervideo/script.js'%}"></script>
+  <script src="{%static 'assets/formoid/formoid.min.js'%}"></script>
+
+
+</body>
+</html>
